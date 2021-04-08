@@ -21,4 +21,21 @@ fn main() {
     };
 
     println!("tweet is {}", tweet.summarize());
+    println!("{}", tweet.summarize_author());
+
+    let article = NewsArticle {
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best \
+             hockey team in the NHL.",
+        ),
+    };
+
+    println!("New article available! {}", article.summarize());
+    println!("{}", article.summarize_author());
+
+    // Using a trait as a parameter
+    notify(&article);
 }
